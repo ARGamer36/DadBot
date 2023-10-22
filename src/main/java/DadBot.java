@@ -12,7 +12,7 @@ public class DadBot extends BotDriver {
     }
     public DadBot() throws LoginException {
         super();
-        shardManager.addEventListener(new DadMain(VERSION));
+        shardManager.addEventListener(new DadMain(VERSION), new ImDadResponse());
     }
     public static void main(String[] args) {
         try {
