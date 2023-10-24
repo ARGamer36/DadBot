@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class SetChannel extends SlashCommand {
     DadJokes dadJokes;
     public SetChannel(DadJokes dJ) {
-        name = "setChannel";
+        name = "set_channel";
         description = "Give Dad a crowd";
         dadJokes = dJ;
         options = new ArrayList<>();
