@@ -2,9 +2,10 @@ import Main.MainCommands;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 
 public class DadMain extends MainCommands {
-    DadJokes dadJokes = new DadJokes();
+    DadJokes dadJokes;
     public DadMain(String version) {
         super(version);
+        dadJokes = new DadJokes();
     }
 
     @Override

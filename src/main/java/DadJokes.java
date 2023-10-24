@@ -3,11 +3,12 @@ import Information.ServerStorage;
 import Main.MainCommands;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.GenericGuildEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 import java.io.FileNotFoundException;
 import java.util.*;
 
-public class DadJokes {
+public class DadJokes extends ListenerAdapter {
     private final int SEC = 1000;
     private final int MIN = SEC * 60;
     private final int HOUR = MIN * 60;
