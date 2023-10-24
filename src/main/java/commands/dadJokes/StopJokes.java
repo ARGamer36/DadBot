@@ -8,7 +8,7 @@ public class StopJokes extends SlashCommand {
     public StopJokes(DadJokes dJ) {
         name = "stop_jokes";
         description = "Hurt your father's heart by asking him to stop saying jokes";
-        DadJokes dadJokes = dJ;
+        dadJokes = dJ;
     }
 
     @Override
