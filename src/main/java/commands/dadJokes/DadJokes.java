@@ -3,6 +3,8 @@ package commands.dadJokes;
 import Information.FileAccessor;
 import Information.ServerStorage;
 import Main.MainCommands;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.GenericGuildEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -53,6 +55,12 @@ public class DadJokes extends ListenerAdapter {
             MainCommands.sendServerMessage(event, "Dad is out of jokes");
             jokesRemain = false;
         }
+    }
+    public void sendDadJoke(Guild guild, Channel channel) {
+        Random random = new Random();
+        int jokeNum = random.nextInt(dadJokesList.size());
+        String joke = dadJokesList.get(jokeNum);
+        guild.getTextChannelById(channel.getId()).sendMessage(joke).queue();
     }
     public void start(GenericGuildEvent event) {
         start(event, 24*HOUR);
