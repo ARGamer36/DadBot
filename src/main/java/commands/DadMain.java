@@ -4,6 +4,7 @@ import Main.MainCommands;
 import commands.dadJokes.DadJokes;
 import commands.dadJokes.GiveJoke;
 import commands.dadJokes.StartJokes;
+import commands.dadJokes.StopJokes;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 
 public class DadMain extends MainCommands {
@@ -12,6 +13,7 @@ public class DadMain extends MainCommands {
         super(version);
         prefixCommands.add(new GiveJoke());
         slashCommands.add(new StartJokes());
+        slashCommands.add(new StopJokes());
         dadJokes = new DadJokes();
     }
 
