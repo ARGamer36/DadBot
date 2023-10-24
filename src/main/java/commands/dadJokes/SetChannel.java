@@ -22,6 +22,6 @@ public class SetChannel extends SlashCommand {
     public void action(SlashCommandInteractionEvent event) {
         Channel channel = event.getOption("channel").getAsChannel();
         dadJokes.setJokeChannel(event.getGuild(), channel.getId());
-        event.reply("Channel set").queue();
+        event.reply("Channel set").setEphemeral(true).queue();
     }
 }
