@@ -5,13 +5,13 @@ import commands.dadJokes.*;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 
 public class DadMain extends MainCommands {
-    public static DadJokes dadJokes;
+    public DadJokes dadJokes;
     public DadMain(String version) {
         super(version);
         prefixCommands.add(new GiveJoke());
-        slashCommands.add(new StartJokes());
-        slashCommands.add(new StopJokes());
-        slashCommands.add(new ResetJokes());
+        slashCommands.add(new StartJokes(dadJokes));
+        slashCommands.add(new StopJokes(dadJokes));
+        slashCommands.add(new ResetJokes(dadJokes));
         dadJokes = new DadJokes();
     }
 

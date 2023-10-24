@@ -1,7 +1,6 @@
 package commands.dadJokes;
 
 import Commands.Abstracts.SlashCommand;
-import commands.DadMain;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
@@ -9,9 +8,11 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import java.util.ArrayList;
 
 public class StartJokes extends SlashCommand {
-    public StartJokes() {
+    DadJokes dadJokes;
+    public StartJokes(DadJokes dJ) {
         name = "start_jokes";
         description = "Let me start telling you some jokes";
+        dadJokes = dJ;
         options = new ArrayList<>();
         options.add(new OptionData(OptionType.INTEGER, "seconds","Number of seconds for each delay",false));
         options.add(new OptionData(OptionType.INTEGER, "minutes", "Number of minutes for each delay", false));
@@ -33,7 +34,7 @@ public class StartJokes extends SlashCommand {
         if (delay == 0) {
             delay += DadJokes.MIN;
         }
-        DadMain.dadJokes.start(event.getGuild(), delay);
+        dadJokes.start(event.getGuild(), delay);
         event.reply("Glad you still like my jokes!!!").setEphemeral(true).queue();
     }
 }
