@@ -9,10 +9,10 @@ public class DadMain extends MainCommands {
     public DadMain(String version) {
         super(version);
         prefixCommands.add(new GiveJoke());
+        dadJokes = new DadJokes();
         slashCommands.add(new StartJokes(dadJokes));
         slashCommands.add(new StopJokes(dadJokes));
         slashCommands.add(new ResetJokes(dadJokes));
-        dadJokes = new DadJokes();
     }
 
     @Override
