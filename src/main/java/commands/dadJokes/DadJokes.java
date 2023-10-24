@@ -40,6 +40,13 @@ public class DadJokes extends ListenerAdapter {
         }
         return jokeChannel;
     }
+    public void setJokeChannel(Guild guild, String channelId) {
+        String filepath = ServerStorage.getInfoFilePath(guild, "jokeChannel.txt");
+        jokeChannel = channelId;
+        try {
+            FileAccessor.rewriteFile(filepath, jokeChannel);
+        } catch (FileNotFoundException e2) {}
+    }
     public void sendDadJoke(Guild guild) {
         String channelId = getJokeChannelId(guild);
         TextChannel channel = guild.getTextChannelById(channelId);

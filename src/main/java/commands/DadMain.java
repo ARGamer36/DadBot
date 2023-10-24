@@ -13,6 +13,7 @@ public class DadMain extends MainCommands {
         slashCommands.add(new StartJokes(dadJokes));
         slashCommands.add(new StopJokes(dadJokes));
         slashCommands.add(new ResetJokes(dadJokes));
+        slashCommands.add(new SetChannel(dadJokes));
     }
 
     @Override
