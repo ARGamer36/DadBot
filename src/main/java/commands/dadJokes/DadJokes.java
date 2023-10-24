@@ -92,7 +92,7 @@ public class DadJokes extends ListenerAdapter {
     public void stop() {
         timer.cancel();
     }
-    private void resetDadJokesList() {
+    protected void resetDadJokesList() {
         dadJokesList = new ArrayList<>();
         dadJokesList.add("I'm afraid for the calendar. Its days are numbered.");
         dadJokesList.add("My wife said I should do lunges to stay in shape. That would be a big step forward.");
