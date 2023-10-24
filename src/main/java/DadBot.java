@@ -1,4 +1,7 @@
 import Main.BotDriver;
+import commands.DadMain;
+import commands.ImDadResponse;
+import commands.dadJokes.DadJokes;
 import net.dv8tion.jda.api.entities.Activity;
 
 import javax.security.auth.login.LoginException;

@@ -1,4 +1,7 @@
+package commands;
+
 import Main.MainCommands;
+import commands.dadJokes.DadJokes;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 
 public class DadMain extends MainCommands {

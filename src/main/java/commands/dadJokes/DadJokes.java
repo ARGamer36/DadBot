@@ -1,3 +1,5 @@
+package commands.dadJokes;
+
 import Information.FileAccessor;
 import Information.ServerStorage;
 import Main.MainCommands;
