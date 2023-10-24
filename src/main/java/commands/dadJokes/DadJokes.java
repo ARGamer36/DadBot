@@ -13,9 +13,9 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class DadJokes extends ListenerAdapter {
-    private final int SEC = 1000;
-    private final int MIN = SEC * 60;
-    private final int HOUR = MIN * 60;
+    protected static final int SEC = 1000;
+    protected static final int MIN = SEC * 60;
+    protected static final int HOUR = MIN * 60;
     private String jokeChannel;
     private List<String> dadJokesList;
     private boolean jokesRemain;
@@ -28,22 +28,22 @@ public class DadJokes extends ListenerAdapter {
         jokesOn = true;
         timer = new Timer();
     }
-    public String getJokeChannelId(GenericGuildEvent event) {
-        String filepath = ServerStorage.getInfoFilePath(event.getGuild(), "jokeChannel.txt");
+    public String getJokeChannelId(Guild guild) {
+        String filepath = ServerStorage.getInfoFilePath(guild, "jokeChannel.txt");
         try {
             jokeChannel = FileAccessor.getFileLine(filepath);
         } catch (FileNotFoundException e) {
-            jokeChannel = event.getGuild().getSystemChannel().getId();
+            jokeChannel = guild.getSystemChannel().getId();
             try {
                 FileAccessor.rewriteFile(filepath, jokeChannel);
             } catch (FileNotFoundException e2) {}
         }
         return jokeChannel;
     }
-    public void sendDadJoke(GenericGuildEvent event) {
-        String channelId = getJokeChannelId(event);
-        TextChannel channel = event.getGuild().getTextChannelById(channelId);
-        sendDadJoke(event, channel);
+    public void sendDadJoke(Guild guild) {
+        String channelId = getJokeChannelId(guild);
+        TextChannel channel = guild.getTextChannelById(channelId);
+        sendDadJoke(guild, channel);
     }
     public void sendDadJoke(GenericGuildEvent event, TextChannel channel) {
         if (dadJokesList.size() != 0) {
@@ -72,7 +72,19 @@ public class DadJokes extends ListenerAdapter {
             @Override
             public void run() {
                 if (jokesOn) {
-                    sendDadJoke(event);
+                    sendDadJoke(event.getGuild());
+                }
+            }
+        }, 0, delay);
+    }
+    public void start(Guild guild, int delay) {
+        stop();
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (jokesOn) {
+                    sendDadJoke(guild);
                 }
             }
         }, 0, delay);
