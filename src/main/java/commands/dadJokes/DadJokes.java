@@ -59,7 +59,7 @@ public class DadJokes extends ListenerAdapter {
             String joke = dadJokesList.get(jokeNum);
             channel.sendMessage(joke).queue();
         } else if (jokesRemain) {
-            MainCommands.sendServerMessage(event, "Dad is out of jokes");
+            MainCommands.sendServerMessage(event.getGuild(), "Dad is out of jokes");
             jokesRemain = false;
         }
     }
