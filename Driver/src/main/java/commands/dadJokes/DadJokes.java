@@ -1,8 +1,8 @@
 package commands.dadJokes;
 
-import Information.FileAccessor;
-import Information.ServerStorage;
-import Main.MainCommands;
+import information.FileAccessor;
+import information.ServerStorage;
+import main.MainCommands;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;

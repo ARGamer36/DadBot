@@ -1,6 +1,6 @@
 package commands;
 
-import Main.MainCommands;
+import main.MainCommands;
 import commands.dadJokes.*;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 

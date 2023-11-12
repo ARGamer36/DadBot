@@ -1,4 +1,4 @@
-import Main.BotDriver;
+import main.BotDriver;
 import commands.DadMain;
 import commands.ImDadResponse;
 import commands.dadJokes.DadJokes;

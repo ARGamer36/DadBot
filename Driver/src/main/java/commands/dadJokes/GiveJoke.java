@@ -1,6 +1,6 @@
 package commands.dadJokes;
 
-import Commands.Abstracts.PrefixCommand;
+import commands.abstracts.PrefixCommand;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public class GiveJoke extends PrefixCommand {

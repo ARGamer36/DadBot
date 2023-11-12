@@ -1,6 +1,6 @@
 package commands.dadJokes;
 
-import Commands.Abstracts.SlashCommand;
+import commands.abstracts.SlashCommand;
 import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
