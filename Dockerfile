@@ -24,4 +24,5 @@ FROM openjdk:17-alpine
 COPY --from=build /tmp/DadBot/Driver/target/*.jar /user/DadBot/Interweb-jar-with-dependencies.jar
 RUN mv /user/DadBot/Interweb-jar-with-dependencies.jar /user/DadBot/app.jar
 WORKDIR /user/DadBot/
+RUN echo "Built on: $(TZ=$TZ date +'%m/%d/%Y %H:%M:%S %Z')" > build_info.txt
 CMD ["java", "-jar", "app.jar"]
