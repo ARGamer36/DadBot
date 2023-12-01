@@ -4,7 +4,7 @@ FROM alpine:3.18 AS clone
 RUN apk update && apk add --no-cache git
 
 WORKDIR /gittmp/
-RUN git clone https://github.com/aldairjpalma/DadBot.git 
+RUN git clone https://github.com/ARGamer36/DadBot.git 
 WORKDIR /gittmp/DadBot/
 RUN git clone https://github.com/ARGamer36/ARJI.git 
 RUN mv /gittmp/DadBot/ARJIpom.xml /gittmp/DadBot/ARJI/pom.xml
